@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import random
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
@@ -9,7 +10,7 @@ from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
 st.title("US House Price Analysis and Prediction")
 
-st.header("Customer Input")
+st.header("User Input")
 
 State = st.selectbox("State", ('Pennsylvania', 'Kentucky', 'South Dakota', 'Texas', 'Tennessee',
                                 'Illinois', 'Oregon', 'Wisconsin', 'Washington', 'Utah',
@@ -77,7 +78,101 @@ def predict_data(user_data):
 
 
 
+# ...
+
+# Create explanations for each feature
+feature_explanations = {
+    'Housing_Inventory': [
+        "Low housing inventory can lead to increased demand and higher home prices.",
+        "Scarce housing inventory may result in competitive bidding, driving up prices.",
+        "High demand for limited homes can result in faster price appreciation."
+    ],
+    'Construction_Costs': [
+        "Higher construction costs can lead to increased home prices.",
+        "Increased material and labor costs can contribute to higher property values.",
+        "Rising construction costs may lead to higher-priced new homes."
+    ],
+    'Land_Availability': [
+        "Limited land availability can drive up home prices as land becomes more valuable.",
+        "Scarce land resources can lead to higher demand for existing properties.",
+        "Limited land may result in higher competition for available lots, increasing prices."
+    ],
+    'Interest_Rates': [
+        "Lower interest rates may increase demand for homes and drive up prices.",
+        "Affordable financing due to lower interest rates can lead to higher home values.",
+        "Lower mortgage rates can make homeownership more accessible, boosting demand."
+    ],
+    'Economic_Conditions': [
+        "Strong economic conditions can boost home prices as people have more purchasing power.",
+        "A robust economy may result in increased job opportunities and housing demand.",
+        "Positive economic growth can lead to higher consumer confidence and home buying."
+    ],
+    'Population_Growth': [
+        "High population growth can increase demand for housing and impact prices.",
+        "Increased population may lead to a housing shortage and rising prices.",
+        "A growing population can drive the need for more homes, affecting prices."
+    ],
+    'Consumer_Confidence': [
+        "High consumer confidence can lead to higher demand and prices in the housing market.",
+        "Confident consumers are more likely to make long-term investments in real estate.",
+        "Positive sentiment can drive people to buy homes, increasing demand."
+    ],
+    'Demographic_Trends': [
+        "Demographic trends, such as millennial buyers, can impact housing demand.",
+        "The preferences of different generations can affect the types of homes in demand.",
+        "Understanding demographic shifts can help predict housing market trends."
+    ],
+    'House_Area_sqft': [
+        "Larger houses may have higher prices due to the increased living space.",
+        "More square footage can provide additional features and amenities, driving up prices.",
+        "Homebuyers often pay more for larger homes with spacious layouts."
+    ],
+    'Location': [
+        "Urban areas may have higher prices due to demand for city living.",
+        "Proximity to job centers and amenities in urban areas can drive up property values.",
+        "Urban properties may offer convenience and lifestyle benefits, affecting prices."
+    ],
+    'Amenities': [
+        "Access to good schools can increase demand and property values in an area.",
+        "Proximity to transportation options can make an area more desirable, impacting prices.",
+        "Amenities such as parks, shopping centers, and recreational facilities can affect home values."
+    ]
+}
+
+# ...
+
 if st.button("Predict"):
     results = predict_data(user_data)
     st.subheader("Estimated Home Price in US:")
     st.info(f"$ {round(results, 2):,.2f}")
+
+    # Randomly select and display a feature explanation
+    st.header("Factors Affecting Home Prices")
+    
+    # Shuffle the feature explanations to display them randomly
+    shuffled_features = list(feature_explanations.keys())
+    random.shuffle(shuffled_features)
+    
+    for feature in shuffled_features:
+        st.write(f"Effect of {feature.replace('_', ' ')}:")
+        explanation = random.choice(feature_explanations[feature])
+        st.write(f"- {explanation}")
+
+
+
+    # # Display factors affecting home prices
+    # st.header("Factors Affecting Home Prices")
+    # st.write("Several factors can influence home prices, including:")
+    
+    # # You can provide explanations for each factor based on the user's input values
+    # st.write("- Housing Inventory: Low housing inventory can lead to increased demand and higher home prices.")
+    # st.write("- Construction Costs: Higher construction costs can lead to increased home prices.")
+    # st.write("- Land Availability: Limited land availability can drive up home prices.")
+    # st.write("- Interest Rates: Lower interest rates may increase demand for homes and drive up prices.")
+    # st.write("- Economic Conditions: Strong economic conditions can boost home prices.")
+    # st.write("- Population Growth: High population growth can increase demand for housing and impact prices.")
+    # st.write("- Consumer Confidence: High consumer confidence can lead to higher demand and prices.")
+    # st.write("- Demographic Trends: Demographic trends, such as millennial buyers, can impact housing demand.")
+    # st.write("- House Area (sqft): Larger houses may have higher prices.")
+    # st.write("- Location: Urban areas may have higher prices due to demand.")
+    # st.write("- Amenities: Access to good schools and transportation can influence prices.")
