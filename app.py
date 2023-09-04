@@ -147,7 +147,7 @@ if st.button("Predict"):
     st.info(f"$ {round(results, 2):,.2f}")
 
     # Randomly select and display a feature explanation
-    st.header("Factors Affecting Home Prices")
+    st.header("Suppy and Demand Factors Affecting Home Prices")
     
     # Shuffle the feature explanations to display them randomly
     shuffled_features = list(feature_explanations.keys())
