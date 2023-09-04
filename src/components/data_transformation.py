@@ -40,7 +40,7 @@ class DataTransformation:
                             'Construction_Costs',
                             'Interest_Rates',
                             'Population_Growth',
-                            'House_Area_(sqft)']
+                            'House_Area_sqft']
                                         
             # Define the custom ranking for each ordinal variable
             State_categories = ['Pennsylvania', 'Kentucky', 'South Dakota', 'Texas', 'Tennessee',
@@ -115,7 +115,7 @@ class DataTransformation:
 
             preprocessing_obj = self.get_data_transformation_object()
 
-            target_column_name = 'House_Price_($)'
+            target_column_name = 'House_Price'
             drop_columns = [target_column_name,'Date']
 
             input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
