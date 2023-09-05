@@ -57,6 +57,7 @@ The architecture of the model will consist of data collection, preprocessing, fe
 5. Model Training: Train and optimize the selected models using the preprocessed data.
 6. Model Evaluation: Evaluate the models using appropriate metrics and cross-validation techniques.
 7. Prediction: Use the trained model to make house price predictions for new data.
+8. Deployment: Deploy the trained house price prediction model using Docker containers and AWS EC2 for scalable and reliable real-time predictions.
 
 ## 8. Conclusion
 ### [Web application of House price prediction](https://us-house-analysis-jexg33m8svf8wuvbrqebyq.streamlit.app/)
