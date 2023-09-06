@@ -61,4 +61,5 @@ The architecture of the model will consist of data collection, preprocessing, fe
 
 ## 8. Conclusion
 ### [Web application of House price prediction](https://us-house-analysis-jexg33m8svf8wuvbrqebyq.streamlit.app/)
-The "US House Price Analysis and Prediction" project aims to provide a valuable tool for understanding and predicting house prices in the United States. By following the outlined methodology and considering the specified requirements and constraints, users can gain insights into the real estate market and make informed decisions.
+
+The US House Price Analysis and Prediction project aims to provide a valuable tool for understanding and predicting house prices in the United States. By following the outlined methodology and considering the specified requirements and constraints, users can gain insights into the real estate market and make informed decisions.
