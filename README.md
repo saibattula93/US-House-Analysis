@@ -1,5 +1,7 @@
 # US House Price Analysis and Prediction
 
+### [Web application of House price prediction](https://us-house-analysis-jexg33m8svf8wuvbrqebyq.streamlit.app/)
+
 ## 1. Overview of the Model
 This project focuses on analyzing US house prices and developing a predictive model to estimate house prices based on various features. The model leverages machine learning techniques to make accurate predictions, enabling users to make informed decisions in the real estate market.
 
@@ -60,6 +62,4 @@ The architecture of the model will consist of data collection, preprocessing, fe
 8. Deployment: Deploy the trained house price prediction model using Docker containers and AWS EC2 for scalable and reliable real-time predictions.
 
 ## 8. Conclusion
-### [Web application of House price prediction](https://us-house-analysis-jexg33m8svf8wuvbrqebyq.streamlit.app/)
-
 The US House Price Analysis and Prediction project aims to provide a valuable tool for understanding and predicting house prices in the United States. By following the outlined methodology and considering the specified requirements and constraints, users can gain insights into the real estate market and make informed decisions.
